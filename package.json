@@ -1,0 +1,15 @@
+{
+  "name": "week-11",
+  "version": "1.0.0",
+  "description": "The instructions for this project are:\r Using any of the tools you've worked with so far, create a game of Tic-Tac-Toe.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "jquery": "^3.7.1"
+  }
+}
