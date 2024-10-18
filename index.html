@@ -1,32 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body class="bg-success">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tic Tac Toe!</title>
+  
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="styles.css">
 
-    <div id="header" class="container text-center p-3">
-       <div class="box" style="border-left: 0; border-top: 0" id="box1"></div>
-    <div class="box" style="border-top: 0" id="box2"></div>
-    <div class="box" style="border-top: 0; border-right: 0" id="box3"></div>
-    <div class="box" style="border-left: 0" id="box4"></div>
-    <div class="box" id="box5"></div>
-    <div class="box" style="border-right: 0" id="box6"></div>
-    <div class="box" style="border-left: 0; border-bottom: 0" id="box7"></div>
-    <div class="box" style="border-bottom: 0" id="box8"></div>
-    <div class="box" style="border-right: 0; border-bottom: 0" id="box9"></div>
+</head>
+<body class="bg-secondary">
+
+  <div id="header" class="container text-center p-3">
+
+    <div class="row">
+      <div class="col pt-2"></div>
+      <div class="col pt-2">
+        <img src="OX.jpg" alt="X & O" width="90">
+      </div>
+      <div class="col pt-2"></div>
+    </div>
+    
+    <div class="row pt-2">
+      <div class="col">
+        <h1 class="m-3">Let's Play Tic-Tac-Toe</h1>
+      </div>
+    </div>
+
+    <div class="row pt-2">
+      <div class="col fs-2">Player 1 - X</div>
+      <div class="col fs-2"></div>
+      <div class="col fs-2">Player 2 - O</div>
+    </div>
+
+  </div>
+  
+  <div id="alert--container">
+
+  <div id="alertStart" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" role="alert">
+    Player 1 Start! 🏳️
   </div>
 
+  <div id="alertWinner" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" role="alert">
+    
+  </div>
 
+  <div id="alertDraw" class="alert alert-info text-center m-0 ms-5 me-5 fs-3" role="alert">
+    GAME OVER! It's a DRAW!
+  </div>
+  </div>
 
+  <div class="container m-auto p-3 g-5">
+    <div id="grid" class="container-outline-light m-auto p-0 bg-dark text-info text-center align-middle border border-info">
+      <div class="row fs-1 g-0">
+        <div id="box0" class="box col p-3 border border-info"></div>
+        <div id="box1" class="box col p-3 border border-info"></div>
+        <div id="box2" class="box col p-3 border border-info"></div>
+      </div>
+      <div class="row fs-1 g-0">
+        <div id="box3" class="box col p-3 border border-info"></div>
+        <div id="box4" class="box col p-3 border border-info"></div>
+        <div id="box5" class="box col p-3 border border-info"></div>
+      </div>
+      <div class="row fs-1 g-0">
+        <div id="box6" class="box col p-3 border border-info"></div>
+        <div id="box7" class="box col p-3 border border-info"></div>
+        <div id="box8" class="box col p-3 border border-info"></div>
+      </div>
+    </div>
+  </div>
 
-
-    <script src="node_modules/bootstrap/dist/css/bootstrap-grid.css"></script>
-    <script src="node_modules/jquery/dist/jquery.js"></script>
-    <script src="index.js"></script>
-    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap-grid.css">
-    <link rel="stylesheet" href="styles.css">
+<div class="d-grid col-2 gap-3 mx-auto pt-4">
+  <button id="startBtn" type="button" class="btn btn-outline-info btn-lg">Start</button>
+  <button id="resetBtn" type="button" class="btn btn-outline-dark btn-lg">Reset</button>
+</div>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
