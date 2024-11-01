@@ -1,4 +1,4 @@
-/**
+u/**
  * Using any of the tools you've worked with so far, create a game of Tic-Tac-Toe.
 
     Create a Tic-Tac-Toe game grid using your HTML element of choice.
@@ -24,6 +24,28 @@
 let currentPlayer = 'X';
 
 const cells = document.querySelectorAll('[box]');
+
+const restartGame = document.getElementById('restartGame');
+
+// Clear the board to start a new game! 
+let board = Array(9).fill(null);
+
+const winningOutcomes = [
+   [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
+   [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
+   [box0, box4, box8], [box2, box4, box6],
+];
+
+// Start the game
+function startGame() {
+ board = array(9).fill(null);
+ 
+// Winning Combos
+const winningOutcomes = [
+   [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
+   [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
+   [box0, box4, box8], [box2, box4, box6],
+];
 
 
 
