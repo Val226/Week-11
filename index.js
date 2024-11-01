@@ -20,6 +20,15 @@
     2 players take turns
  */
 
+// Start the Game
+let currentPlayer = 'X';
+
+const cells = document.querySelectorAll('[box]');
+
+
+
+
+/*
 let box0 = ${'#box0'};
 let box1 = ${'#box1'};
 let box2 = ${'#box2'};
@@ -66,3 +75,5 @@ const startGame = () => {
 }
 
 document.getElementById('startBtn').addEventListener('click', ( => startGame()));
+
+*/
