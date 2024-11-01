@@ -36,16 +36,16 @@ const winningOutcomes = [
    [box0, box4, box8], [box2, box4, box6],
 ];
 
-// Start the game
+// Start or Reset the game
 function startGame() {
- board = array(9).fill(null);
- 
-// Winning Combos
-const winningOutcomes = [
-   [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
-   [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
-   [box0, box4, box8], [box2, box4, box6],
-];
+  board = Array(9).fill(null);
+  cells.focells.forEach(cell => {
+  cell.classList.remove('X', 'O');
+  cell.textContent = '';
+  cell.addEventListener('click', handleCellClick, {once: true});
+});
+ currentPlayer = 'X';
+}
 
 
 
