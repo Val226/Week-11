@@ -30,7 +30,7 @@ const restartGame = document.getElementById('restartGame');
 // Clear the board to start a new game! 
 let board = Array(9).fill(null);
 
-const winningOutcomes = [
+const winningCombos = [
    [0, 1, 2], [3, 4, 5], [6, 7, 8]
    [0, 3, 6], [1, 4, 7], [2, 5, 8]
    [0, 4, 8], [2, 4, 6],
@@ -70,6 +70,22 @@ else {
 currentPlayer = currentPlayer === 'X' ? 'O': 'X'
 }
 }
+
+// Check if there's a winner each turn
+function checkWinner(player) {
+  return winningCombos.some(combo => {
+  board[index] === player);
+});
+}
+
+// End the game & remove event listeners
+function endGame() {
+  cells.forEach(cell => {
+  cell.removeEventListener('click', handleCellClick));
+}
+
+// Restart the game
+
 
 
 /*
