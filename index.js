@@ -39,7 +39,7 @@ const winningOutcomes = [
 // Start or Reset the game
 function startGame() {
   board = Array(9).fill(null);
-  cells.focells.forEach(cell => {
+  cells.forCells.forEach(cell => {
   cell.classList.remove('X', 'O');
   cell.textContent = '';
   cell.addEventListener('click', handleCellClick, {once: true});
@@ -50,7 +50,7 @@ function startGame() {
 // Handle click events
 function handleCellClick(e) {
   const cell = e.target;
-  const cellIndex = Array.from(cells).indecOf(cell);
+  const cellIndex = Array.from(cells).indexOf(cell);
 
 // Play X or O on the board
 board[cellIndex] = currentPlayer;
@@ -63,7 +63,7 @@ if (checkWinner(currentPlayer)) {
   endGame();
 }
 else if (board.every(cell => cell) {
-  alert("It's a Draw!);
+  alert("It's a Draw!");
   endGame();
 }
 else {
