@@ -31,9 +31,9 @@ const restartGame = document.getElementById('restartGame');
 let board = Array(9).fill(null);
 
 const winningOutcomes = [
-   [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
-   [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
-   [box0, box4, box8], [box2, box4, box6],
+   [0, 1, 2], [3, 4, 5], [6, 7, 8]
+   [0, 3, 6], [1, 4, 7], [2, 5, 8]
+   [0, 4, 8], [2, 4, 6],
 ];
 
 // Start or Reset the game
