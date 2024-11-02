@@ -20,108 +20,84 @@
     2 players take turns
  */
 
-let box0 = $(box0);
-let box1 = $(box1);
-let box2 = $(box2);
-let box3 = $(box3);
-let box4 = $(box4);
-let box5 = $(box5);
-let box6 = $(box6);
-let box7 = $(box7);
-let box8 = $(box8);
+// Start the Game
+let currentPlayer = 'X';
 
-// Is the click X or O?
-let player1 = 'X';
-let player2 = 'O';
+const cells = document.querySelectorAll('[box]');
 
-// Winner at 5 turns, there cannot be more than 9 turns
-let turn = 0;
+const restartGame = document.getElementById('restartGame');
 
-// Has a player won?
-let winner = false;
+// Clear the board to start a new game! 
+let board = Array(9).fill(null);
 
-
-// Alert Messages
-$(alertStart).hide();
-$(alertWinner).hide();
-$(alertDraw).hide();
-
-const winningOutcomes = [
-   [box0, box1, box2], [box3, box4, box5], [box6, box7, box8]
-   [box0, box3, box6], [box1, box4, box7], [box2, box5, box8]
-   [box, box4, box8], [box2, box4, box6],
+const winningCombos = [
+   [0, 1, 2], [3, 4, 5], [6, 7, 8]
+   [0, 3, 6], [1, 4, 7], [2, 5, 8]
+   [0, 4, 8], [2, 4, 6],
 ];
 
-const checkWinner = (currentPlayer, a, b, c) => {
-
-   if(a.text() === currentPlayer && b.text() === currentPlayer && c.text() === currentPlayer )
-      winner = true;
-   console.log(`Found Winner, its $(currentPlayer)!`)
-
-   a.removeClass(text-info, bg-dark);
-
-   a.addClass(text-dark, bg-info)
-   b.addClass(text-dark, bg-info)
-   c.addClass(text-dark, bg-info)
-
-   $(#alert).text(`GAME OVER... $(currentPlayer) wins!`)
-   $(alertWinner).show();
-
-
+// Start or Reset the game
+function startGame() {
+  board = Array(9).fill(null);
+  cells.forCells.forEach(cell => {
+  cell.classList.remove('X', 'O');
+  cell.textContent = '';
+  cell.addEventListener('click', handleCellClick, {once: true});
+});
+ currentPlayer = 'X';
 }
 
-let currentPlayer = '';
+// Handle click events
+function handleCellClick(e) {
+  const cell = e.target;
+  const cellIndex = Array.from(cells).indexOf(cell);
 
-const startGame = () => {
-   console.log("Start Game!");
-   console(turn++);
-   currentPlayer = player1;
-   console.log(currentPlayer);
-   $(#p1).addClass("bg-light border border-info");
+// Play X or O on the board
+board[cellIndex] = currentPlayer;
+cell.textContent = currentPlayer;
+cell.classList.add(currentPlayer.toLowerCase());
 
-   // The start alert!
-   $(alertStart).show();
-
-   $(.box).on('click', function() {
-      $(alertStart).hide();
-
-      $(this).text(currentPlayer);
-
-      if (turn > 4) {
-         //Checks to see if there's a winner
-         console.log(winner?)
-      }
-
-      if (currentPlayer === player1) {
-         currentPlayer = player2;
-         console.log(turn++);
-         $(#p1).addClass("bg-light border border-info");
-         $(#p2).addClass("bg-light border border-info");
-      }
-      else {
-         currentPlayer = player1;
-         console.log(turn++);
-         $(#p1).addClass("bg-light border border-info");
-         $(#p2).addClass("bg-light border border-info");
-      }
-
-   })
-
+// Check for winner!
+if (checkWinner(currentPlayer)) {
+  alert(`${ currentPlayer } wins!`);
+  endGame();
+}
+else if (board.every(cell => cell) {
+  alert("It's a Draw!");
+  endGame();
+}
+else {
+currentPlayer = currentPlayer === 'X' ? 'O': 'X'
+}
 }
 
-document.getElementById(startBtn).addEventListener('click', () => startGame()); 
-document.getElementById(resetButton).addEventListener('click', () => document.location.reload(true));
+// Check if there's a winner each turn
+function checkWinner(player) {
+  return winningCombos.some(combo => {
+  board[index] === player);
+});
+}
 
-/**
-let box0 = $('#box0');
-let box1 = $('#box1');
-let box2 = $('#box2');
-let box3 = $('#box3');
-let box4 = $('#box4');
-let box5 = $('#box5');
-let box6 = $('#box6');
-let box7 = $('#box7');
-let box8 = $('#box8');
+// End the game & remove event listeners
+function endGame() {
+  cells.forEach(cell => {
+  cell.removeEventListener('click', handleCellClick));
+}
+
+// Restart the game
+
+
+
+/*
+let box0 = ${'#box0'};
+let box1 = ${'#box1'};
+let box2 = ${'#box2'};
+let box3 = ${'#box3'};
+let box4 = ${'#box4'};
+let box5 = ${'#box5'};
+let box6 = ${'#box6'};
+let box7 = ${'#box7'};
+let box8 = ${'#box8'};
 
 // Is X or O being played this turn?
 let player1 = "X";
@@ -158,10 +134,6 @@ const startGame = () => {
 
 }
 
-$(document).ready(function () {
-   $(this).text(currentPlayer)
+document.getElementById('startBtn').addEventListener('click', ( => startGame()));
 
-   currentPlayer = (currentPlayer === 'X') ? 'O' : 'X'
-})
-
-**/
+*/
