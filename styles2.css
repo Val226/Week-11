@@ -1,0 +1,21 @@
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 5px;
+  margin: 0 auto;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #000;
+  font-size: 24px;
+  cursor: pointer;
+  background-color: mediumpurple;
+}
+
+.cell:hover {
+  background-color: aquamarine;
+}

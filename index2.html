@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=  , initial-scale=1.0">
+  <title>Tic-Tac-Toe</title>
+  <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link href="css/dashboard.css" rel="stylesheet">
+  <link href="styles2.css" rel="stylesheet">
+  <style>
+
+  </style>
+</head>
+<body>
+  <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+    <h2 class="mt-3" id="name">Tic-Tac-Toe</h2>
+    <p id="paragraph">Let's play tic-tac-toe! This is a simple 2 player game that everyone has played before!
+      In case you forgot the rules (I forget the rules to games often, don't let anyone
+      bully you for forgetting!), each player will play either an X or an O, depending on who
+      goes first. You want to get 3 in a row of the X or O that you are playing. If all boxes are
+      filled up and there are no 3 in a row of either letter, it is a tie game and no 
+      one is the winner. Good Luck!
+    </p>
+    <div id="game">
+      <!--Top Row-->
+      <div class="row">
+        <div class="col cell" data-player="X"></div>
+        <div class="col cell border-start border-end"></div>
+        <div class="col cell"></div>
+      </div>
+      <!--Middle Row-->
+      <div class="row">
+        <div class="col cell border-top border-bottom"></div>
+        <div class="col cell border-start border-end border-bottom border-top"></div>
+        <div class="col cell border-top border-bottom"></div>
+      </div>
+      <!--Bottom Row-->
+      <div class="row">
+        <div class="col cell"></div>
+        <div class="col cell border-start border-end"></div>
+        <div class="col cell"></div>
+      </div>
+    </div>
+  </main>
+
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="index2.js"></script>
+</body>
+</html>
